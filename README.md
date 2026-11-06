@@ -7,7 +7,7 @@ A Claude Code mod for practicing English while you work. When it is on, every pr
 - **Left:** your message corrected, with every change in bold, or, for a message in Bahasa Indonesia, how to say it in natural English.
 - **Right:** each mistake and why (explained in Bahasa Indonesia), or useful words and phrases.
 
-Your prompt goes to the main model at once, so the answer is never delayed. Capitalization, missing apostrophes (`Im`, `dont`), code, commands, file paths and logs are never corrected.
+Your prompt goes to the main model at once, so the answer is never delayed. Capitalization, missing apostrophes (`Im`, `dont`), code, commands, file paths and logs are never corrected. Text you paste into a prompt is skipped too: only the words you typed yourself are checked, and a prompt that is only a paste is not checked at all.
 
 ## Examples
 
