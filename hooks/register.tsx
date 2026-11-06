@@ -12,9 +12,17 @@ const LOG_SIZE = 50
 const last = atom({ plugin: 'learn-english', key: 'last' } as const, null)
 const isHidden = atom({ plugin: 'learn-english', key: 'isHidden' } as const, false)
 
+/**
+ * Pasted text arrives wrapped in <pasted_content> tags: someone else's words, not the user's
+ * English, so it is cut out and left as a "[pasted text]" marker for the coach.
+ */
+export function stripPasted(text: string): string {
+  return text.replace(/<pasted_content\b[^>]*>[\s\S]*?<\/pasted_content\b[^>]*>/g, '[pasted text]')
+}
+
 /** Prompts with no sentence worth coaching: slash commands, shell, memory, and one or two words. */
 function isSkipped(text: string): boolean {
-  const t = text.trim()
+  const t = text.replace(/\[pasted text\]/g, '').trim()
   if (t === '' || t.startsWith('/') || t.startsWith('!') || t.startsWith('#')) return true
   return t.split(/\s+/).length < 3
 }
@@ -60,7 +68,7 @@ export const register: Register = on => {
   on('prompt.submit', async ($, e, next) => {
     // Coaching never holds up the prompt: any failure here just skips the check.
     try {
-      const text = e.text
+      const text = stripPasted(e.text)
       const isOn = (await $.store.get(ENABLED_KEY)) === true
 
       if (isOn && !e.command && !e.isMeta && !isSkipped(text)) {
