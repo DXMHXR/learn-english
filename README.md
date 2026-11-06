@@ -1,5 +1,7 @@
 # learn-english
 
+> **Made for native speakers of Bahasa Indonesia.** Explanations, mistake notes and word meanings are written in Bahasa Indonesia, and prompts typed in Bahasa Indonesia are translated into natural English. To coach speakers of another language, change the language named in [`coach-prompt.md`](coach-prompt.md).
+
 A Claude Code mod for practicing English while you work. When it is on, every prompt you send is checked by Haiku (low effort) in the background, and the result shows in a sticky band above the prompt bar:
 
 - **Left:** your message corrected, with every change in bold, or, for a message in Bahasa Indonesia, how to say it in natural English.
