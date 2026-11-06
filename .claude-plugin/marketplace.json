@@ -1,0 +1,15 @@
+{
+  "name": "learn-english",
+  "owner": {
+    "name": "Rahmad Hidayat"
+  },
+  "metadata": {
+    "description": "English practice for Claude Code: Haiku corrects each prompt in a band above the prompt bar"
+  },
+  "plugins": [
+    {
+      "name": "learn-english",
+      "source": "./"
+    }
+  ]
+}

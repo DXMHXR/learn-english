@@ -1,0 +1,9 @@
+{
+  "name": "learn-english",
+  "version": "0.1.0",
+  "description": "English coach: Haiku corrects each prompt in a sticky band above the prompt, without delaying the answer",
+  "author": { "name": "Rahmad Hidayat" },
+  "repository": "https://github.com/DXMHXR/learn-english",
+  "license": "MIT",
+  "types": "./types/index.d.ts"
+}
